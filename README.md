@@ -17,8 +17,8 @@ You must have Node.js and NPM installed on your server / computer first.
 
 To run locally, fork this repo into your server and run:
 
-npm Install
-npm Start
+1. npm Install
+2. npm Start
 
 To run on an HTTPS / HTTP domain, follow same steps as above and install nginx and then refer to our NGINX.conf file for how to proxy pass it onto your domain.
 
