@@ -1,21 +1,15 @@
-thingproxy
+CORSProxy
 ==========
 
-A simple forward proxy server for processing API calls to servers that don't send CORS headers or support HTTPS.
+A simple forward proxy server for processing API calls to servers that don't send CORS headers or support HTTPS. Forked from https://github.com/Freeboard/thingproxy
 
-### what?
+### CORSProxy vs Thingproxy
 
-thingproxy allows javascript code on your site to access resources on other domains that would normally be blocked due to the [same-origin policy](http://en.wikipedia.org/wiki/Same_origin_policy). It acts as a proxy between your browser and a remote server and adds the proper CORS headers to the response.
+CORSProxy is a fork of Thingproxy with additional documentation + in-deph configuration that will be maintained. 
 
-In addition, some browsers don't allow requests for non-encrypted HTTP data if the page itself is loaded from HTTPS. thingproxy also allows you to access non-secure HTTP API's from a secure HTTPS url. 
+### What is the point of CORSProxy
 
-We encourage you to run your own thingproxy server with this source code, but freeboard.io offers a free proxy available at:
-
-http://thingproxy.freeboard.io and https://thingproxy.freeboard.io
-
-### why?
-
-Dashboards created with freeboard normally access APIs directly from ajax calls from javascript. Many API providers do not provide the proper CORS headers, or don't support HTTPS— thingproxy is provided to overcome these limitations.
+CORSProxy allows your site to access resources on other domains that would normally be blocked due to the same-origin policy. It acts as a proxy between your browser and a remote server and adds the proper CORS headers to the response.
 
 ### how?
 
