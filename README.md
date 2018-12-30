@@ -5,28 +5,32 @@ A simple forward proxy server for processing API calls to servers that don't sen
 
 ### CORSProxy vs Thingproxy
 
-CORSProxy is a fork of Thingproxy with additional documentation + in-deph configuration that will be maintained. 
+CORSProxy is a fork of Thingproxy with additional documentation + in-deph configuration that will be maintained. You can read our feature list below.
 
 ### What is the point of CORSProxy
 
 CORSProxy allows your site to access resources on other domains that would normally be blocked due to the same-origin policy. It acts as a proxy between your browser and a remote server and adds the proper CORS headers to the response.
 
-### how?
+### Installation
 
-Just prefix any url with http(s)://thingproxy.freeboard.io/fetch/
+You must have Node.js and NPM installed on your server / computer first. 
 
-For example:
+To run locally, fork this repo into your server and run:
+
+npm Install
+npm Start
+
+To run on an HTTPS / HTTP domain, follow same steps as above and install nginx and then refer to our NGINX.conf file for how to proxy pass it onto your domain.
+
+Usage:
+
+Once server is running you can make requests by the following:
 
 ```
-https://thingproxy.freeboard.io/fetch/http://my.api.com/get/stuff
+https://myHTTPSdomain/fetch/APITOFETCH
 ```
 
-Any HTTP method, headers and body you send, will be sent to the URL you specify and the response will be sent back to you with the proper CORS headers attached.
-
-### caveats
-
-Don't abuse the thingproxy.freeboard.io server— it is meant for relatively small API calls and not as a proxy server to hide your identity. Right now we limit requests and responses to 100,000 characters each (sorry no file downloads), and throttle each IP to 10 requests/second.
-
-### privacy
-
-thingproxy.freeboard.io does log the date, requester's IP address, and URL for each request sent to it. We do not log headers or request bodies. We will not share or sell this data to anyone, period.
+### CORSPRoxy To-do
+1. Config.json documentation + additional values to whitelist IP's, request URLS
+2. Throttle requests and set max requests / s
+3. Send specific headers depending on the request
